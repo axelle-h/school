@@ -1,25 +1,27 @@
 # Drawing Nested Squares
-#Input: number of desired squaes, a non-zero positive integer
-#Output: nested squares drawn across the page
+# Input: number of desired squares, a non-zero positive integer
+# Output: nested squares drawn across the page
 
-#Import built-in functions
+# Import built-in functions
 from turtle import *
-number_of_shapes = 4 #
 
-#Setting counter for square size
+# Set desired number of nested squares
+number_of_shapes = 4
+
+# Set counter for square size
 square_size_counter = 0
 
-#Let's define our custom functions
+
+# Define drawing and moving custom functions
 def draw_square():
     """A simple function for drawing a square with turtle."""
 
-    for sides in range(1,5):
+    for sides in range(1, 5):
         forward(20 * square_size_counter)
         right(90)
 
-        
 def move():
-    "This function gets turtle into place to draw a nested square with draw_square()."""
+    """"This function gets turtle into place to draw the next nested square with draw_square()."""
 
     penup()
     left(90)
@@ -30,8 +32,8 @@ def move():
     pendown()
 
 
-#Draw nested squares
+# Draw nested squares
 for shape in range(1, number_of_shapes + 1):
-    square_size_counter = square_size_counter + 1
+    square_size_counter += 1
     draw_square()
     move()
